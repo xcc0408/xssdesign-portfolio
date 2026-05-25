@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>许帅帅 - UI/UX设计师作品集</title>
+    <meta
+      name="description"
+      content="许帅帅 UI/UX 设计师个人作品集，展示移动端、官网、后台系统、AIGC 与个人探索作品。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script src="./src/portfolio.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#works">跳到作品区</a>
+    <header class="site-header">
+      <a class="logo" href="#top" aria-label="许帅帅作品集首页">
+        <span><img src="./public/assets-fast/avatar.jpg" alt="" /></span>
+        <strong>UI/UX Designer</strong>
+      </a>
+      <nav aria-label="作品集导航">
+        <a href="#top">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#works">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="header-mail contact-trigger" type="button" data-contact-open>联系TA</button>
+    </header>
+
+    <main id="top">
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-noise" aria-hidden="true"></div>
+
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Portfolio 2026 / Hangzhou</p>
+            <h1 id="hero-title">Hello,<br /><em>I'm UI/UX Designer.</em></h1>
+            <h2>用设计解决问题，提升体验创造价值</h2>
+            <div class="hero-description">
+              <p>视觉传达本科毕业，拥有 7 年 UI/UX 设计经验，具备扎实的视觉设计能力主导过 SaaS、B2B、B2C、O2O 等多类型产品设计，具备完整项目落地经验。</p>
+              <p>能独立负责 PC 端、App 及小程序等多端设计，具备全链路设计能力，保障多平台体验一致性。</p>
+              <p>熟练使用 Figma、Sketch、PS、AI、AI 生图工具（ChatGPT、即梦、Lovart 等），可高效完成从原型到高保真交付的设计流程。</p>
+              <p>具备良好的审美与沟通能力，能够快速理解业务需求，并与产品、开发团队高效协作推动项目落地。</p>
+            </div>
+            <div class="hero-info" aria-label="个人联系方式">
+              <span>杭州</span>
+              <a href="mailto:13603588956@163.com">13603588956@163.com</a>
+              <span>UI / UX / Web / Dashboard</span>
+            </div>
+            <div class="hero-actions">
+              <button class="primary-button contact-trigger" type="button" data-contact-open>联系TA</button>
+              <a class="secondary-button" href="#works">View projects</a>
+            </div>
+          </div>
+
+          <div class="hero-stage" aria-label="个人首屏视觉">
+            <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+            <div class="orbital-ring ring-a" aria-hidden="true"></div>
+            <div class="orbital-ring ring-b" aria-hidden="true"></div>
+            <div class="portrait-orb" aria-hidden="true"></div>
+            <img class="hero-portrait" src="./public/assets/portrait-xu.png" alt="许帅帅个人形象照" loading="eager" />
+            <p class="hero-signature">Design to<br />Solve and Inspire.</p>
+            <div class="experience-badge">
+              <strong>7+</strong>
+              <span>Years<br />Experience</span>
+            </div>
+            <a class="scroll-hint" href="#works">Scroll down</a>
+          </div>
+        </div>
+
+        <div class="marquee" aria-label="作品类型滚动条">
+          <div>
+            <span>Mobile Commerce</span>
+            <span>Campus Community</span>
+            <span>Website</span>
+            <span>B2B Workbench</span>
+            <span>AIGC</span>
+            <span>Personal Exploration</span>
+            <span>Design System</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="works-section" id="works" aria-labelledby="works-title">
+        <div class="section-heading">
+          <span>Selected Works</span>
+          <h2 id="works-title">精选作品</h2>
+        </div>
+
+        <article class="case-block mobile-case">
+          <div class="case-copy">
+            <p class="case-count">01</p>
+            <h3>企业电商采购移动端设计</h3>
+            <p>
+              围绕企业采购场景设计移动端电商体验，覆盖首页促销、商品详情、规格选择、订单管理与售后寄回等完整交易链路。
+            </p>
+            <div class="case-tags" aria-label="项目标签">
+              <span>移动端</span>
+              <span>电商采购</span>
+              <span>小程序</span>
+              <span>交易链路</span>
+            </div>
+            <button class="case-more" type="button" data-case="mobile-commerce">查看更多</button>
+          </div>
+          <div class="project-showcase phone-showcase" aria-label="移动端页面展示" data-case="mobile-commerce" role="button" tabindex="0">
+            <figure><img src="./public/assets-fast/mobile-commerce/home.jpg" alt="移动端电商首页首屏" loading="lazy" /></figure>
+            <figure><img src="./public/assets-fast/mobile-commerce/detail.jpg" alt="移动端商品详情页首屏" loading="lazy" /></figure>
+          </div>
+        </article>
+
+        <article class="case-block campus-case">
+          <div class="case-copy">
+            <p class="case-count">02</p>
+            <h3>趣校园 App 设计</h3>
+            <p>
+              面向大学生校园生活场景的移动端 App，覆盖校园首页、动态社区、关注流、话题广场、消息、个人主页、社团活动、跳蚤市场和兼职招聘。
+            </p>
+            <div class="case-tags" aria-label="项目标签">
+              <span>移动端</span>
+              <span>校园社区</span>
+              <span>内容信息流</span>
+              <span>生活服务</span>
+            </div>
+            <button class="case-more" type="button" data-case="qu-campus">查看更多</button>
+          </div>
+          <div class="project-showcase phone-showcase" aria-label="趣校园 App 页面展示" data-case="qu-campus" role="button" tabindex="0">
+            <figure><img src="./public/assets-fast/qu-campus/home.jpg" alt="趣校园首页首屏" loading="lazy" /></figure>
+            <figure><img src="./public/assets-fast/qu-campus/discover.jpg" alt="趣校园发现页首屏" loading="lazy" /></figure>
+          </div>
+        </article>
+
+        <article class="case-block procurement-case">
+          <div class="case-copy">
+            <p class="case-count">03</p>
+            <h3>88buys 采购服务商 B2B 选品工作台</h3>
+            <p>
+              为采购服务商设计的 B2B 选品页，覆盖商品搜索、类目筛选、商品详情、素材分享、AI 集采推荐、生成方案与方案池管理。
+            </p>
+            <div class="case-tags" aria-label="项目标签">
+              <span>Web端</span>
+              <span>B2B</span>
+              <span>AI 选品</span>
+              <span>工作台</span>
+            </div>
+            <button class="case-more" type="button" data-case="88buys-workbench">查看更多</button>
+          </div>
+          <div class="project-showcase desktop-showcase" aria-label="88buys B2B 选品工作台页面展示" data-case="88buys-workbench" role="button" tabindex="0">
+            <figure><img src="./public/assets-fast/88buys-workbench/home.jpg" alt="88buys 工作台首页首屏" loading="lazy" /></figure>
+            <figure><img src="./public/assets-fast/88buys-workbench/ai-plan.jpg" alt="88buys AI 集采生成方案页首屏" loading="lazy" /></figure>
+          </div>
+        </article>
+
+        <article class="case-block dashboard-case">
+          <div class="case-copy">
+            <p class="case-count">04</p>
+            <h3>校联 CRM 客户管理系统</h3>
+            <p>
+              面向校外培训机构的 B 端 CRM 系统，覆盖工作台数据看板、班级管理、学员管理与信息录入流程。
+            </p>
+            <div class="case-tags" aria-label="项目标签">
+              <span>Web端</span>
+              <span>CRM</span>
+              <span>教育行业</span>
+              <span>后台系统</span>
+            </div>
+            <button class="case-more" type="button" data-case="xiaolian-crm">查看更多</button>
+          </div>
+          <div class="project-showcase desktop-showcase" aria-label="校联 CRM 页面展示" data-case="xiaolian-crm" role="button" tabindex="0">
+            <figure><img src="./public/assets-fast/xiaolian-crm/login.jpg" alt="校联 CRM 登录页首屏" loading="lazy" /></figure>
+            <figure><img src="./public/assets-fast/xiaolian-crm/dashboard.jpg" alt="校联 CRM 工作台数据看板首屏" loading="lazy" /></figure>
+          </div>
+        </article>
+
+        <article class="case-block website-case">
+          <div class="case-copy">
+            <p class="case-count">05</p>
+            <h3>88buys 官网视觉设计</h3>
+            <p>
+              该模块包含天猫超市企业购官网与升级后的 88buys 新官网。前期聚焦天猫超市企业采购，后续整合天猫优品、支付宝企业购等阿里资源，升级为更完整的企业采购服务平台。
+            </p>
+            <div class="case-tags" aria-label="项目标签">
+              <span>Web端</span>
+              <span>官网</span>
+              <span>企业服务</span>
+              <span>品牌视觉</span>
+            </div>
+            <button class="case-more" type="button" data-case="88buys-website">查看大图</button>
+          </div>
+          <div class="project-showcase desktop-showcase" aria-label="88buys 官网页面展示" data-case="88buys-website" role="button" tabindex="0">
+            <figure><img src="./public/assets-fast/website/88buys-home.jpg" alt="88buys 新官网首页首屏" loading="lazy" /></figure>
+            <figure><img src="./public/assets-fast/website/tmall-business-home.jpg" alt="天猫超市企业购官网首页首屏" loading="lazy" /></figure>
+          </div>
+        </article>
+
+        <article class="case-block harley-case">
+          <div class="case-copy">
+            <p class="case-count">06</p>
+            <h3>哈雷戴维森品牌官网设计</h3>
+            <p>
+              以黑橙品牌基调、摩托车大图和沉浸式内容区塑造强烈品牌氛围，覆盖首页车型展示、产品详情、品牌历史时间线和赛事活动页面。
+            </p>
+            <div class="case-tags" aria-label="项目标签">
+              <span>Web端</span>
+              <span>品牌官网</span>
+              <span>产品体验</span>
+              <span>暗色视觉</span>
+            </div>
+            <button class="case-more" type="button" data-case="harley-website">查看更多</button>
+          </div>
+          <div class="project-showcase desktop-showcase" aria-label="哈雷官网页面展示" data-case="harley-website" role="button" tabindex="0">
+            <figure><img src="./public/assets-fast/harley-website/home.jpg" alt="哈雷官网首页首屏" loading="lazy" /></figure>
+            <figure><img src="./public/assets-fast/harley-website/detail.jpg" alt="哈雷官网产品详情页首屏" loading="lazy" /></figure>
+          </div>
+        </article>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <span>About</span>
+          <h2 id="about-title">经验不是年份，是能把事情落地的判断。</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              我是一名 UI/UX 设计师，主修视觉传达设计，拥有 7 年产品设计经验。过去参与过多个电商与教育行业产品项目，覆盖 SaaS、B2B、B2C、O2O 等不同业务场景。
+            </p>
+            <p>
+              我擅长 PC 端与移动端界面设计，包括 App、小程序、官网、管理后台和 H5 商城等产品形态。能够独立负责从需求理解、用户流程梳理、原型设计、视觉设计到高保真交付的完整设计流程。
+            </p>
+          </div>
+          <div class="timeline" id="experience">
+            <article>
+              <time>2022.08 - 至今</time>
+              <strong>杭州飞象企服网络技术有限公司</strong>
+              <span>UI/UX设计师</span>
+            </article>
+            <article>
+              <time>2020.04 - 2022.08</time>
+              <strong>浙江小虫科技有限公司</strong>
+              <span>UI/UX设计师</span>
+            </article>
+            <article>
+              <time>2019.03 - 2020.03</time>
+              <strong>苏州朗梵教育有限公司</strong>
+              <span>UI设计师</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner-section" aria-labelledby="banner-title">
+        <div class="section-heading compact">
+          <span>AIGC Banner</span>
+          <h2 id="banner-title">电商 Banner 视觉探索</h2>
+        </div>
+        <div class="banner-marquee" aria-label="AIGC 电商 Banner 横向展示">
+          <div class="banner-track" id="banner-track"></div>
+        </div>
+      </section>
+
+      <section class="banner-section drawing-section" aria-labelledby="drawing-title">
+        <div class="section-heading compact">
+          <span>Hand Drawing</span>
+          <h2 id="drawing-title">手绘作品</h2>
+        </div>
+        <div class="banner-marquee drawing-marquee" aria-label="手绘作品横向展示">
+          <div class="banner-track drawing-track" id="drawing-track"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="portfolio-modal" id="portfolio-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-modal-close></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <button class="modal-close" type="button" aria-label="关闭弹窗" data-modal-close>×</button>
+        <aside class="modal-sidebar">
+          <div>
+            <p class="modal-kicker">Project gallery</p>
+            <h2 id="modal-title">项目预览</h2>
+            <p class="modal-count" id="modal-count">1 / 1</p>
+          </div>
+          <div class="thumb-list" id="modal-thumbs" aria-label="项目缩略图"></div>
+        </aside>
+        <div class="modal-content">
+          <div class="mockup-stage">
+            <div class="mockup-shell" id="mockup-shell">
+              <div class="mockup-toolbar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="mockup-screen" id="mockup-screen">
+                <img id="modal-image" src="" alt="" />
+              </div>
+            </div>
+          </div>
+          <aside class="modal-description" aria-label="页面说明">
+            <p class="modal-kicker">Page notes</p>
+            <h3 id="modal-image-title">页面说明</h3>
+            <p id="modal-image-desc">选择左侧缩略图后，在这里查看对应页面的设计说明。</p>
+          </aside>
+          </div>
+      </section>
+    </div>
+
+    <footer class="contact-section" id="contact">
+      <div class="contact-content">
+        <p>Available for UI/UX roles</p>
+        <h2>期待与你聊聊AI时代下的设计。</h2>
+        <div class="contact-card">
+          <img src="./public/assets-fast/contact/wechat-qr.jpg" alt="微信二维码" loading="lazy" />
+          <div>
+            <strong>许帅帅 / UI/UX Designer</strong>
+            <span>手机号：13603588956</span>
+            <a href="mailto:13603588956@163.com">邮箱：13603588956@163.com</a>
+          </div>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:13603588956@163.com">13603588956@163.com</a>
+          <a href="tel:13603588956">13603588956</a>
+          <span>杭州</span>
+          <a href="#top">Back to top</a>
+        </div>
+      </div>
+      <div class="contact-ai-visual" aria-hidden="true">
+        <div class="ai-chip">Prompt</div>
+        <div class="ai-chip">Prototype</div>
+        <div class="ai-chip">AI Flow</div>
+        <div class="ai-panel">
+          <span>Design × AI</span>
+          <strong>Human insight<br />Machine speed</strong>
+          <i></i>
+        </div>
+        <div class="ai-node node-a"></div>
+        <div class="ai-node node-b"></div>
+        <div class="ai-node node-c"></div>
+        <div class="ai-line line-a"></div>
+        <div class="ai-line line-b"></div>
+        <div class="ai-line line-c"></div>
+        <div class="ai-grid">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </footer>
+
+    <a class="back-top-button" href="#top" aria-label="返回顶部">↑</a>
+
+    <div class="contact-modal" id="contact-modal" aria-hidden="true">
+      <button class="contact-backdrop" type="button" aria-label="关闭联系方式" data-contact-close></button>
+      <section class="contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-title" tabindex="-1">
+        <button class="contact-close" type="button" aria-label="关闭联系方式" data-contact-close>×</button>
+        <img src="./public/assets-fast/contact/wechat-card.jpg" alt="微信二维码" />
+        <div>
+          <p>Contact</p>
+          <h2 id="contact-title">联系TA</h2>
+          <span>手机号：13603588956</span>
+          <a href="mailto:13603588956@163.com">邮箱：13603588956@163.com</a>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
