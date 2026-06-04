@@ -1178,20 +1178,8 @@ p {
   height: 100%;
 }
 
-.project-showcase .image-shell.is-loaded > img {
-  transform: scale(1.035) translate3d(0, 0, 0);
-  transform-origin: top center;
-  will-change: transform;
-  animation: screenDrift 7.6s ease-in-out infinite;
-}
-
 .project-showcase figure:nth-child(2) {
   animation-delay: -2.1s;
-}
-
-.project-showcase figure:nth-child(2) .image-shell.is-loaded > img {
-  animation-delay: -3.4s;
-  animation-name: screenDriftReverse;
 }
 
 .project-showcase figure:first-child {
@@ -2184,30 +2172,6 @@ p {
   }
   72% {
     translate: 2px 4px;
-  }
-}
-
-@keyframes screenDrift {
-  0%, 100% {
-    transform: scale(1.035) translate3d(0, 0, 0);
-  }
-  42% {
-    transform: scale(1.04) translate3d(0, -14px, 0);
-  }
-  72% {
-    transform: scale(1.038) translate3d(3px, -6px, 0);
-  }
-}
-
-@keyframes screenDriftReverse {
-  0%, 100% {
-    transform: scale(1.035) translate3d(0, 0, 0);
-  }
-  38% {
-    transform: scale(1.04) translate3d(0, -10px, 0);
-  }
-  70% {
-    transform: scale(1.038) translate3d(-3px, -18px, 0);
   }
 }
 
