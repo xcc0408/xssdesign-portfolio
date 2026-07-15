@@ -155,6 +155,19 @@ const PROJECTS = {
       { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/qu-campus/product-detail.jpg", title: "商品详情", alt: "趣校园跳蚤市场商品详情页", desc: "商品详情页服务校园二手交易场景，突出卖家信息、价格、商品描述、参数、图片、问询入口和购买意向按钮。页面把商品可信度与沟通路径放在一起，让用户能在查看商品细节后快速发起咨询。设计上需要兼顾闲置商品的真实感、信息完整度和轻量交易转化。" },
     ],
   },
+  "caimi-app": {
+    title: "采蜜 APP 儿童阅读成长平台",
+    type: "mobile",
+    images: [
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/home.png", title: "首页", alt: "采蜜 APP 首页", desc: "首页面向儿童和家长的日常打开场景，将问候语、搜索、活动 Banner、核心功能入口、上次浏览和绘本推荐组织在同一条阅读路径里。页面用明亮柔和的黄色调和蜜蜂角色建立亲和感，让孩子能快速进入听故事、绘本馆、口语表达和书架，同时让家长看到清晰的继续阅读入口。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/library.png", title: "绘本馆", alt: "采蜜 APP 绘本馆", desc: "绘本馆承担内容浏览与选书任务，通过推荐、生活习惯、科普百科、经典童话等分类组织绘本资源。卡片以封面为主、标题为辅，并用 VIP、限免等角标补充权益信息，让孩子和家长可以在轻松的视觉节奏中发现适合当前阶段的阅读内容。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/explore.png", title: "探索地图", alt: "采蜜 APP 探索页", desc: "探索页把阅读任务转化成地图式冒险，用路径、关卡、星星奖励和锁定状态引导孩子持续前进。左侧快捷入口承接任务、排行榜、活动和勋章，底部目标卡展示今日星星进度和小树苗成长状态，让阅读目标被游戏化地呈现出来。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/growth.png", title: "成长体系", alt: "采蜜 APP 成长页", desc: "成长页集中展示孩子的阅读等级、经验值、成长阶段、阅读数据和能力雷达。页面把抽象的阅读积累转换为小树苗成长、徽章、星星任务和能力评分，让家长能看到阶段性成果，也让孩子获得持续阅读的正反馈。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/reading-detail.png", title: "阅读详情", alt: "采蜜 APP 阅读详情页", layout: "wide", desc: "阅读详情页采用沉浸式绘本画面，把正文、角色对话、页码进度、朗读、跟读、识字卡和目录入口叠加在阅读场景中。界面需要同时照顾孩子的故事沉浸和家长的辅助功能，因此把操作区集中在边缘和底部，避免打断主体画面。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/reading-complete.png", title: "阅读完成", alt: "采蜜 APP 阅读完成弹窗", layout: "wide", desc: "阅读完成弹窗在故事结束后给出即时奖励反馈，展示阅读星星、阅读经验和蜂蜜币收益，并提供再读一遍和选择新书两个后续动作。它把完成感、奖励感和下一步阅读连接起来，帮助孩子形成持续阅读的闭环。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/profile.png", title: "我的", alt: "采蜜 APP 我的页面", desc: "我的页面面向家长和孩子的个人管理场景，整合书架、收藏、下载、阅读笔记、家长中心、阅读报告、成长记录、内容偏好和会员服务。页面用卡片分组降低功能密度，让阅读资产、家长管理和账号服务各自保持清晰。" },
+    ],
+  },
   "88buys-workbench": {
     title: "88buys 采购服务商 B2B 选品工作台",
     type: "desktop",
@@ -342,7 +355,7 @@ function schedulePan() {
 function fitMockupToImage() {
   shell.style.width = "";
   shell.style.height = "";
-  if (!activeProject || activeProject.type === "mobile" || !image.naturalWidth) return;
+  if (!activeProject || shell.classList.contains("is-mobile") || !image.naturalWidth) return;
   const toolbarHeight = 34;
   const maxShellHeight = Math.min(window.innerHeight * 0.78, activeProject.type === "banner" ? 720 : 680);
   const maxShellWidth = Math.min(window.innerWidth * 0.68, activeProject.type === "banner" ? 1180 : 980);
@@ -366,7 +379,9 @@ function setImage(index) {
   activeIndex = index;
   const item = activeProject.images[index];
   const isBanner = activeProject.type === "banner";
+  const isMobileFrame = activeProject.type === "mobile" && item.layout !== "wide";
   resetPan();
+  shell.classList.toggle("is-mobile", isMobileFrame);
   image.closest(".image-shell")?.classList.remove("is-loaded", "is-error");
   image.src = item.src;
   image.alt = item.alt;
@@ -404,7 +419,6 @@ function openModal(projectKey) {
   activeProject = PROJECTS[projectKey];
   if (!activeProject) return;
   title.textContent = activeProject.title;
-  shell.classList.toggle("is-mobile", activeProject.type === "mobile");
   modal.classList.toggle("is-banner-modal", activeProject.type === "banner");
   renderThumbs();
   modal.classList.add("is-open");
