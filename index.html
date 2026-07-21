@@ -300,7 +300,9 @@
                 <span></span>
               </div>
               <div class="mockup-screen" id="mockup-screen">
-                <img id="modal-image" src="" alt="" />
+                <button class="mockup-image-button" type="button" data-image-open aria-label="查看当前页面大图">
+                  <img id="modal-image" src="" alt="" />
+                </button>
               </div>
             </div>
           </div>
@@ -310,6 +312,19 @@
             <p id="modal-image-desc">选择左侧缩略图后，在这里查看对应页面的设计说明。</p>
           </aside>
           </div>
+      </section>
+    </div>
+
+    <div class="image-viewer" id="image-viewer" aria-hidden="true">
+      <div class="image-viewer-backdrop" data-image-close></div>
+      <section class="image-viewer-panel" role="dialog" aria-modal="true" aria-label="大图预览" tabindex="-1">
+        <div class="image-viewer-bar">
+          <span id="image-viewer-title">大图预览</span>
+          <button class="image-viewer-close" type="button" data-image-close aria-label="关闭大图">×</button>
+        </div>
+        <div class="image-viewer-body">
+          <img id="image-viewer-img" src="" alt="" />
+        </div>
       </section>
     </div>
 

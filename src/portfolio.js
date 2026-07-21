@@ -233,6 +233,11 @@ const image = document.querySelector("#modal-image");
 const imageTitle = document.querySelector("#modal-image-title");
 const imageDesc = document.querySelector("#modal-image-desc");
 const modalDescription = document.querySelector(".modal-description");
+const imageOpenButton = document.querySelector("[data-image-open]");
+const imageViewer = document.querySelector("#image-viewer");
+const imageViewerPanel = document.querySelector(".image-viewer-panel");
+const imageViewerImage = document.querySelector("#image-viewer-img");
+const imageViewerTitle = document.querySelector("#image-viewer-title");
 const bannerTrack = document.querySelector("#banner-track");
 const drawingTrack = document.querySelector("#drawing-track");
 const heroParticles = document.querySelector("#hero-particles");
@@ -385,6 +390,7 @@ function setImage(index) {
   image.closest(".image-shell")?.classList.remove("is-loaded", "is-error");
   image.src = item.src;
   image.alt = item.alt;
+  imageOpenButton?.setAttribute("aria-label", `查看大图：${item.title}`);
   trackImageLoad(image);
   imageTitle.textContent = item.title;
   imageDesc.textContent = isBanner ? "" : `${item.desc} 整体兼顾信息层级、业务目标和视觉节奏。`;
@@ -399,6 +405,34 @@ function setImage(index) {
       schedulePan();
     });
   }
+}
+
+function openImageViewer() {
+  if (!activeProject) return;
+  const item = activeProject.images[activeIndex];
+  if (!item) return;
+  stopPan();
+  imageViewerImage.closest(".image-shell")?.classList.remove("is-loaded", "is-error", "is-wide");
+  imageViewerImage.src = item.src;
+  imageViewerImage.alt = item.alt;
+  imageViewerImage.classList.toggle("is-wide", item.layout === "wide" || activeProject.type !== "mobile");
+  imageViewerImage.closest(".image-shell")?.classList.toggle("is-wide", item.layout === "wide" || activeProject.type !== "mobile");
+  imageViewerTitle.textContent = `${activeProject.title} - ${item.title}`;
+  trackImageLoad(imageViewerImage);
+  imageViewer.classList.add("is-open");
+  imageViewer.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  imageViewerPanel.focus();
+}
+
+function closeImageViewer() {
+  if (!imageViewer.classList.contains("is-open")) return;
+  imageViewer.classList.remove("is-open");
+  imageViewer.setAttribute("aria-hidden", "true");
+  if (!modal.classList.contains("is-open")) {
+    document.body.style.overflow = "";
+  }
+  panel.focus();
 }
 
 function renderThumbs() {
@@ -435,6 +469,7 @@ function openModalAt(projectKey, index) {
 
 function closeModal() {
   stopPan();
+  closeImageViewer();
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
@@ -558,7 +593,17 @@ document.querySelectorAll("[data-modal-close]").forEach((button) => {
   button.addEventListener("click", closeModal);
 });
 
+imageOpenButton?.addEventListener("click", openImageViewer);
+
+document.querySelectorAll("[data-image-close]").forEach((button) => {
+  button.addEventListener("click", closeImageViewer);
+});
+
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && imageViewer.classList.contains("is-open")) {
+    closeImageViewer();
+    return;
+  }
   if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
   if (event.key === "Escape" && contactModal?.classList.contains("is-open")) closeContactModal();
 });
