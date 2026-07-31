@@ -211,7 +211,7 @@ const PROJECTS = {
     ],
   },
   "aigc-banners": {
-    title: "AIGC 电商 Banner 视觉探索",
+    title: "电商 Banner 落地设计",
     type: "banner",
     images: AIGC_BANNERS.map(({ desc, ...item }) => item),
   },
