@@ -104,17 +104,17 @@ const AIGC_BANNERS = [
 ];
 
 const HAND_DRAWINGS = [
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0927_1_11zon.jpg", title: "手绘向日葵", alt: "手绘向日葵油画作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0012_2_11zon.jpg", title: "手绘鸭子", alt: "手绘鸭子素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0016_3_11zon.jpg", title: "手绘动物头像", alt: "手绘动物头像素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0017_4_11zon.jpg", title: "手绘动物特写", alt: "手绘动物特写素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0018_5_11zon.jpg", title: "手绘兔子", alt: "手绘兔子素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0019_6_11zon.jpg", title: "手绘小狗", alt: "手绘小狗素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0020_7_11zon.jpg", title: "手绘海豹", alt: "手绘海豹素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0021_8_11zon.jpg", title: "手绘幼年海豹", alt: "手绘幼年海豹素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0022_9_11zon.jpg", title: "手绘松鼠", alt: "手绘松鼠素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0031_10_11zon.jpg", title: "手绘仓鼠", alt: "手绘仓鼠素描作品" },
-  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0032_11_11zon.jpg", title: "手绘小狗与网球", alt: "手绘小狗与网球作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0012_2_11zon.jpg", title: "手绘向日葵", alt: "手绘向日葵作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0016_3_11zon.jpg", title: "手绘鸭子", alt: "手绘鸭子素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0017_4_11zon.jpg", title: "手绘小狗头像", alt: "手绘小狗头像素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0018_5_11zon.jpg", title: "手绘猩猩头像", alt: "手绘猩猩头像素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0019_6_11zon.jpg", title: "手绘兔子", alt: "手绘兔子素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0020_7_11zon.jpg", title: "手绘巴哥犬", alt: "手绘巴哥犬头像素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0021_8_11zon.jpg", title: "手绘海豹", alt: "手绘海豹素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0022_9_11zon.jpg", title: "手绘小鸟", alt: "手绘小鸟素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0031_10_11zon.jpg", title: "手绘松鼠", alt: "手绘松鼠素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0032_11_11zon.jpg", title: "手绘仓鼠", alt: "手绘仓鼠素描作品" },
+  { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/hand-drawings/IMG_0927_1_11zon.jpg", title: "手绘小狗与网球", alt: "手绘小狗与网球作品" },
 ];
 
 const PROJECTS = {
@@ -240,6 +240,7 @@ const imageViewerImage = document.querySelector("#image-viewer-img");
 const imageViewerTitle = document.querySelector("#image-viewer-title");
 const bannerTrack = document.querySelector("#banner-track");
 const drawingTrack = document.querySelector("#drawing-track");
+const drawingNavButtons = document.querySelectorAll("[data-gallery-nav]");
 const heroParticles = document.querySelector("#hero-particles");
 const contactModal = document.querySelector("#contact-modal");
 const contactPanel = document.querySelector(".contact-panel");
@@ -254,6 +255,7 @@ let panTarget = 0;
 let panDuration = 0;
 let panDelayTimer = 0;
 let panAnimation = null;
+let drawingGalleryIndex = 0;
 
 function trackImageLoad(img) {
   if (!img) return;
@@ -529,6 +531,23 @@ function renderScrollingGallery(track, items, projectKey, cardClass = "") {
 renderScrollingGallery(bannerTrack, AIGC_BANNERS, "aigc-banners");
 renderScrollingGallery(drawingTrack, HAND_DRAWINGS, "hand-drawings", "drawing-card");
 hydrateImageSkeletons();
+
+function moveDrawingGallery(direction) {
+  if (!drawingTrack) return;
+  const firstCard = drawingTrack.querySelector(".banner-card");
+  if (!firstCard) return;
+  const gap = Number.parseFloat(getComputedStyle(drawingTrack).gap) || 0;
+  const step = firstCard.getBoundingClientRect().width + gap;
+  drawingGalleryIndex = (drawingGalleryIndex + direction + HAND_DRAWINGS.length) % HAND_DRAWINGS.length;
+  drawingTrack.classList.add("is-manual");
+  drawingTrack.style.transform = `translate3d(${-drawingGalleryIndex * step}px, 0, 0)`;
+}
+
+drawingNavButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    moveDrawingGallery(button.dataset.galleryNav === "next" ? 1 : -1);
+  });
+});
 
 if (heroParticles) {
   const context = heroParticles.getContext("2d");
