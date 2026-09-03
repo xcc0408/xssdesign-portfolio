@@ -1441,12 +1441,21 @@ p {
 }
 
 .mockup-shell.is-mobile {
-  width: min(360px, 84vw, calc((72vh - 18px) * 375 / 812));
+  width: min(360px, 84vw, calc((72vh - 18px) * var(--mockup-ratio, 375 / 812)));
   height: auto;
-  aspect-ratio: 375 / 812;
+  aspect-ratio: var(--mockup-ratio, 375 / 812);
   border-width: 9px;
   border-color: #141417;
   border-radius: 42px;
+}
+
+.portfolio-modal.is-edge-mobile .mockup-shell.is-mobile {
+  box-sizing: content-box;
+  width: min(470px, 88vw, calc((80vh - 20px) * var(--mockup-ratio, 853 / 1844)));
+  padding: 5px;
+  border-width: 0;
+  border-radius: 32px;
+  background: #141417;
 }
 
 .mockup-toolbar {
@@ -1515,6 +1524,10 @@ p {
 .mockup-shell.is-mobile .mockup-screen {
   height: 100%;
   border-radius: 31px;
+}
+
+.portfolio-modal.is-edge-mobile .mockup-shell.is-mobile .mockup-screen {
+  border-radius: 26px;
 }
 
 .mockup-screen img {
@@ -2684,6 +2697,10 @@ p {
 
   .mockup-shell {
     height: 62vh;
+  }
+
+  .mockup-shell.is-mobile {
+    height: auto;
   }
 
   .portfolio-modal.is-banner-modal .mockup-shell {
