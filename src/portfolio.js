@@ -168,6 +168,23 @@ const PROJECTS = {
       { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/caimi-app/profile.png", title: "我的", alt: "采蜜 APP 我的页面", desc: "我的页面面向家长和孩子的个人管理场景，整合书架、收藏、下载、阅读笔记、家长中心、阅读报告、成长记录、内容偏好和会员服务。页面用卡片分组降低功能密度，让阅读资产、家长管理和账号服务各自保持清晰。" },
     ],
   },
+  "cardhub-app": {
+    title: "卡集 CardHub 集换卡交易平台",
+    type: "mobile",
+    images: [
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/home.png", title: "首页", alt: "卡集 CardHub 首页", desc: "首页面向集换卡用户的日常打开场景，将搜索、卡组推荐、行情脉搏、趋势卡牌和收藏进度集中在首屏。页面以暗色底、紫色高亮和卡牌稀有度视觉建立收藏资产感，让用户能快速查看热门卡牌、市场变化和自己的收藏推进状态。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/search.png", title: "搜索列表", alt: "卡集 CardHub 搜索列表", desc: "搜索列表承接用户找卡与比价任务，通过关键词搜索、筛选条件、品相标签、价格和涨跌幅信息帮助用户快速判断目标卡牌。列表保留清晰的卡面缩略图和价格层级，让收藏者可以在多个卖家或版本之间完成初步比较。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/detail.png", title: "卡牌详情", alt: "卡集 CardHub 卡牌详情", desc: "卡牌详情页集中展示卡面、稀有度、市场价、在售信息、价格走势和收藏操作，帮助用户完成购买前的关键判断。页面将行情数据、品相说明和交易入口放在同一决策链路中，让卡牌既是收藏品，也能被作为可追踪的资产来管理。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/cart.png", title: "购物车", alt: "卡集 CardHub 购物车", desc: "购物车页面用于确认待购卡牌、卖家评分、品相、配送方式和最终金额。界面强调商品卡片与价格汇总的关系，把选择卖家、查看保障和立即购买放在清晰的操作路径里，减少交易前的信息遗漏。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/checkout.png", title: "确认订单", alt: "卡集 CardHub 确认订单", desc: "确认订单页把卡牌信息、收货地址、配送方式、支付方式、买家保障、税费和合计金额按结算顺序组织起来。设计重点是让用户在提交前明确商品、地址、费用和保障内容，降低高价值卡牌交易中的不确定感。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/order-detail.png", title: "订单详情", alt: "卡集 CardHub 订单详情", desc: "订单详情页延续结算后的状态追踪，保留商品信息、配送节点、价格信息和交易保护说明。页面通过步骤状态和订单摘要帮助用户确认当前进度，适合承接支付后查看、物流跟踪和售后判断等场景。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/payment-success.png", title: "支付成功", alt: "卡集 CardHub 支付成功", desc: "支付成功页给出明确的订单确认反馈，并展示订单编号、购买卡牌、预计送达时间和物流进度。页面提供追踪订单与返回市场两个动作，让用户在完成交易后自然进入履约查看或继续浏览的下一步。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/market.png", title: "市场", alt: "卡集 CardHub 市场页", desc: "市场页承载行情浏览与交易发现任务，聚合市场概览、热门波动、最新挂牌和筛选排序。用户可以从价格变化、成交热度和最新卡牌中发现交易机会，页面整体更接近卡牌收藏者的行情看板。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/discover.png", title: "发现", alt: "卡集 CardHub 发现页", desc: "发现页围绕卡组、系列和全部卡牌浏览展开，通过分类、搜索、进度条和卡牌网格帮助用户探索不同主题卡牌。它让用户不只通过交易入口找卡，也能从收藏图鉴和系列内容中建立长期兴趣。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/collection.png", title: "收藏", alt: "卡集 CardHub 收藏页", desc: "收藏页用于沉淀个人卡牌资产，展示总估值、涨跌趋势、卡牌数量、系列进度、最近新增和关注卡牌。页面把收藏成果与市场价值连接起来，帮助用户理解自己的卡牌组合、缺口和后续收集方向。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/cardhub-app/profile.png", title: "我的", alt: "卡集 CardHub 我的页面", desc: "我的页面整合用户资料、评分、关注、交易入口、订单、出价、拍卖活动、心愿单、收藏洞察和账号支持。页面通过分组列表组织高频管理功能，让交易、收藏和个人账户服务保持清晰可达。" },
+    ],
+  },
   "88buys-workbench": {
     title: "88buys 采购服务商 B2B 选品工作台",
     type: "desktop",
