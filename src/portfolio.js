@@ -119,18 +119,15 @@ const HAND_DRAWINGS = [
 
 const PROJECTS = {
   "mobile-commerce": {
-    title: "企业电商采购移动端设计",
-    type: "mobile",
+    title: "88buys 企业采购移动端设计",
+    type: "desktop",
     images: [
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/home.jpg", title: "商城首页", alt: "移动端电商首页", desc: "商城首页围绕企业采购的高频路径展开，把搜索、促销 banner、快捷入口、限时秒杀和商品推荐放在首屏动线中，让用户能快速进入找货、比价和下单流程。设计上重点处理运营信息密度与购买效率之间的平衡，用更清晰的分区降低浏览成本，同时通过优惠、品类和爆品模块提升转化意愿。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/detail.jpg", title: "商品详情", alt: "移动端商品详情页", desc: "商品详情页重点强化价格、优惠、规格、配送和服务保障信息，让采购用户在一个页面里完成关键判断。页面将券后价、商品图、属性参数、服务承诺和购买入口组合在同一决策链路中，减少用户反复跳转造成的犹豫。设计目标是让商品卖点、交易条件和信任信息都能被快速看见。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/spec.jpg", title: "规格选择", alt: "移动端选择规格页", desc: "规格选择弹层承接用户从浏览到购买的关键一步，聚合商品套餐、数量、价格变化、库存反馈和确认按钮，适配多 SKU 商品的选择场景。界面通过清晰的选中态和价格反馈减少误选风险，让用户在提交前明确知道自己买了什么、买多少、金额如何变化，从而提升下单确定性。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/orders-all.jpg", title: "订单列表-全部", alt: "移动端订单列表全部状态页", desc: "全部订单页将不同状态订单集中展示，订单号复制后通过 toast 反馈“复制成功”，让用户知道操作已生效。整张订单卡片作为点击热区，可直接进入订单详情；当订单商品超过三种时，默认收起多余商品，并提供展开收起操作，既控制列表高度，也保留查看完整商品的路径。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/orders-pending-payment.jpg", title: "订单列表-待付款", alt: "移动端订单列表待付款页", desc: "待付款页突出未支付订单的金额、商品数量和继续支付按钮，让用户能快速完成支付动作。多商品订单默认展示前三件商品，并通过展开入口查看其余商品，避免列表被过长订单撑开。取消订单作为次要操作放在旁边，降低误触风险，同时保留订单处理的完整闭环。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/orders-pending-shipment.jpg", title: "订单列表-待发货", alt: "移动端订单列表待发货页", desc: "待发货页重点处理售后入口差异：有售后中的商品显示“查看售后”，无售后的商品显示“申请售后”，两种操作都跳转至订单详情统一处理。这样可以减少列表页复杂度，同时让用户在不同商品状态下看到明确下一步。页面还保留再来一单和取消订单，覆盖发货前的常见决策。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/orders-shipped.jpg", title: "订单列表-已发货", alt: "移动端订单列表已发货页", desc: "已发货页区分部分发货与全部发货两类场景，并在商品行中展示各自的发货状态。部分发货订单保留查看物流和再来一单，全部发货订单增加申请售后入口，方便用户按当前履约状态处理问题。展开收起机制继续服务多商品订单，保证状态信息清楚但列表不臃肿。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/orders-completed.jpg", title: "订单列表-已完成", alt: "移动端订单列表已完成页", desc: "已完成页同时呈现完成订单和已关闭订单，帮助用户在同一状态分类下理解订单最终结果。有售后中的商品显示“查看售后”，无售后的商品显示“申请售后”，并统一跳转到订单详情；已取消订单弱化操作，仅保留再来一单，减少用户在无效订单上的操作成本。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/orders-cancel.jpg", title: "取消订单", alt: "移动端取消订单原因弹层", desc: "取消订单弹层将原因选择、其它原因输入和确认按钮放在同一底部操作面板中。单选原因可以直接提交；选择其它原因时必须填写说明，点击确定后通过 toast 提示“取消成功”。这种处理让取消流程既足够轻量，又能收集必要原因，便于后续优化商品、物流和支付体验。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/88buys-mobile-overview.png", title: "移动端项目总览", alt: "88buys 企业采购移动端项目总览", desc: "项目总览页明确 88buys 企业购的移动端定位：整合天猫超市、1688、盒马等商品资源，连接集采代发、品牌供应链、企业商城和智能工具，让采购服务商可以在移动端完成找货、推荐、下单与履约协同。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/88buys-project-analysis.png", title: "产品分析", alt: "88buys 产品分析展示页", desc: "产品分析页梳理项目背景与产品目标，聚焦传统采购模式中供应链分散、采购效率低、价格透明度不足和服务商运营成本高等问题，并将平台目标收束到统一入口、资源整合和高效业务协同上。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/88buys-home-design.png", title: "首页设计", alt: "88buys 首页设计展示页", desc: "首页设计页展示移动端商城首屏的信息组织方式，通过轮播 Banner、金刚区入口、快捷入口、热门活动和商品列表建立从运营曝光到交易转化的首页路径，提升采购用户对商品与活动的发现效率。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/88buys-product-list.png", title: "商品列表", alt: "88buys 商品列表展示页", desc: "商品列表页展示从频道商品浏览、商品详情到规格弹层的选购流程，通过价格、标签、履约方式、服务保障和规格选择来支持用户完成商品判断，并把浏览行为顺畅推进到加入购物车或立即购买。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/88buys-shopping-cart.png", title: "购物车与结算", alt: "88buys 购物车与结算展示页", desc: "购物车与结算页重点呈现下单流程，支持多商品集中管理、价格汇总、地址确认、优惠计算、支付方式选择和提交支付，减少用户逐个下单与重复核算的操作成本。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/mobile-commerce/88buys-operation-design.png", title: "运营设计", alt: "88buys 运营设计展示页", desc: "运营设计页展示专题 Banner、活动弹窗和首页活动位的视觉策略，通过大促、品牌专场、限时特惠和品类主题提升运营曝光效率，使商城具备持续拉新、促活和转化的内容运营能力。" },
     ],
   },
   "qu-campus": {
@@ -187,15 +184,15 @@ const PROJECTS = {
     ],
   },
   "88buys-workbench": {
-    title: "88buys 企业采购移动端设计",
+    title: "88buys 采购服务商 B2B 选品工作台",
     type: "desktop",
     images: [
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/mobile-terminal.png", title: "移动端项目总览", alt: "88buys 企业采购移动端项目总览", desc: "项目总览页明确 88buys 企业购的移动端定位：整合天猫超市、1688、盒马等商品资源，连接集采代发、品牌供应链、企业商城和智能工具，让采购服务商可以在移动端完成找货、推荐、下单与履约协同。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/project-analysis.png", title: "产品分析", alt: "88buys 产品分析展示页", desc: "产品分析页梳理项目背景与产品目标，聚焦传统采购模式中供应链分散、采购效率低、价格透明度不足和服务商运营成本高等问题，并将平台目标收束到统一入口、资源整合和高效业务协同上。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/home-design.png", title: "首页设计", alt: "88buys 首页设计展示页", desc: "首页设计页展示移动端商城首屏的信息组织方式，通过轮播 Banner、金刚区入口、快捷入口、热门活动和商品列表建立从运营曝光到交易转化的首页路径，提升采购用户对商品与活动的发现效率。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/product-list.png", title: "商品列表", alt: "88buys 商品列表展示页", desc: "商品列表页展示从频道商品浏览、商品详情到规格弹层的选购流程，通过价格、标签、履约方式、服务保障和规格选择来支持用户完成商品判断，并把浏览行为顺畅推进到加入购物车或立即购买。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/shopping-cart.png", title: "购物车与结算", alt: "88buys 购物车与结算展示页", desc: "购物车与结算页重点呈现下单流程，支持多商品集中管理、价格汇总、地址确认、优惠计算、支付方式选择和提交支付，减少用户逐个下单与重复核算的操作成本。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/operation-design.png", title: "运营设计", alt: "88buys 运营设计展示页", desc: "运营设计页展示专题 Banner、活动弹窗和首页活动位的视觉策略，通过大促、品牌专场、限时特惠和品类主题提升运营曝光效率，使商城具备持续拉新、促活和转化的内容运营能力。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/home.jpg", title: "选品首页", alt: "88buys 工作台首页", desc: "选品首页面向采购服务商的日常找货任务，将搜索、类目、品牌专区、工作台入口和商品卡片组合在同一入口页。用户可以从关键词、品类或运营推荐快速进入选品流程。设计重点是降低首次进入的理解成本，并把高频操作前置，让服务商能更快找到可推荐、可组合、可分享的商品。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/products.jpg", title: "全部商品", alt: "88buys 全部商品页", desc: "全部商品页服务于高频、重复、批量的选品工作，因此提供多维筛选、模板保存、视图切换和商品列表信息。页面需要同时满足快速浏览和精准筛选，两者之间通过清晰的筛选栏、商品卡片和排序机制连接。设计目标是让服务商在大量 SKU 中稳定、高效地找到合适商品。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/detail.jpg", title: "商品详情", alt: "88buys 商品详情页", desc: "商品详情页集中展示集采价、电商比价、推荐理由、推广素材、商品参数和服务信息，帮助服务商判断商品是否适合推荐给客户。页面不仅承担商品说明，也承担采购决策和销售沟通准备。设计上将价格、卖点、素材与行动按钮放在同一节奏中，让信息从理解到分享更顺畅。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/share.jpg", title: "分享方案", alt: "88buys 分享方案弹窗", desc: "分享方案弹窗将商品卖点、阶梯价格、推荐理由、二维码和客户沟通素材组织成可传播内容，帮助服务商快速生成对外推荐方案。弹窗设计需要在有限空间里完成预览、确认和分享动作，因此信息层级必须清楚。它把复杂商品信息转化为客户更容易理解的购买理由，提高服务商触达效率。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/ai-plan.jpg", title: "AI 生成方案", alt: "88buys AI 集采生成方案页", desc: "AI 生成方案页从采购需求输入到选品结果输出形成完整链路，帮助服务商把模糊需求转化为可执行的集采方案。页面设计强调输入引导、结果可读性和方案调整能力，让用户理解 AI 并不是黑盒，而是辅助筛选与组织商品的工具。整体目标是降低人工选品成本，提高方案生成速度。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/pool.jpg", title: "方案池", alt: "88buys 方案池侧栏", desc: "方案池作为选品过程中的中间暂存区，支持商品收集、批量移除、数量调整和生成方案等动作。它让服务商可以边浏览边沉淀候选商品，而不必频繁跳转页面。设计上采用侧栏形态，既保留当前选品上下文，又让用户随时查看方案内容，适合复杂采购流程中的临时管理和最终确认。" },
     ],
   },
   "xiaolian-crm": {
