@@ -187,15 +187,15 @@ const PROJECTS = {
     ],
   },
   "88buys-workbench": {
-    title: "88buys 采购服务商 B2B 选品工作台",
+    title: "88buys 企业采购移动端设计",
     type: "desktop",
     images: [
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/home.jpg", title: "选品首页", alt: "88buys 工作台首页", desc: "选品首页面向采购服务商的日常找货任务，将搜索、类目、品牌专区、工作台入口和商品卡片组合在同一入口页。用户可以从关键词、品类或运营推荐快速进入选品流程。设计重点是降低首次进入的理解成本，并把高频操作前置，让服务商能更快找到可推荐、可组合、可分享的商品。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/products.jpg", title: "全部商品", alt: "88buys 全部商品页", desc: "全部商品页服务于高频、重复、批量的选品工作，因此提供多维筛选、模板保存、视图切换和商品列表信息。页面需要同时满足快速浏览和精准筛选，两者之间通过清晰的筛选栏、商品卡片和排序机制连接。设计目标是让服务商在大量 SKU 中稳定、高效地找到合适商品。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/detail.jpg", title: "商品详情", alt: "88buys 商品详情页", desc: "商品详情页集中展示集采价、电商比价、推荐理由、推广素材、商品参数和服务信息，帮助服务商判断商品是否适合推荐给客户。页面不仅承担商品说明，也承担采购决策和销售沟通准备。设计上将价格、卖点、素材与行动按钮放在同一节奏中，让信息从理解到分享更顺畅。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/share.jpg", title: "分享方案", alt: "88buys 分享方案弹窗", desc: "分享方案弹窗将商品卖点、阶梯价格、推荐理由、二维码和客户沟通素材组织成可传播内容，帮助服务商快速生成对外推荐方案。弹窗设计需要在有限空间里完成预览、确认和分享动作，因此信息层级必须清楚。它把复杂商品信息转化为客户更容易理解的购买理由，提高服务商触达效率。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/ai-plan.jpg", title: "AI 生成方案", alt: "88buys AI 集采生成方案页", desc: "AI 生成方案页从采购需求输入到选品结果输出形成完整链路，帮助服务商把模糊需求转化为可执行的集采方案。页面设计强调输入引导、结果可读性和方案调整能力，让用户理解 AI 并不是黑盒，而是辅助筛选与组织商品的工具。整体目标是降低人工选品成本，提高方案生成速度。" },
-      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/pool.jpg", title: "方案池", alt: "88buys 方案池侧栏", desc: "方案池作为选品过程中的中间暂存区，支持商品收集、批量移除、数量调整和生成方案等动作。它让服务商可以边浏览边沉淀候选商品，而不必频繁跳转页面。设计上采用侧栏形态，既保留当前选品上下文，又让用户随时查看方案内容，适合复杂采购流程中的临时管理和最终确认。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/mobile-terminal.png", title: "移动端项目总览", alt: "88buys 企业采购移动端项目总览", desc: "项目总览页明确 88buys 企业购的移动端定位：整合天猫超市、1688、盒马等商品资源，连接集采代发、品牌供应链、企业商城和智能工具，让采购服务商可以在移动端完成找货、推荐、下单与履约协同。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/project-analysis.png", title: "产品分析", alt: "88buys 产品分析展示页", desc: "产品分析页梳理项目背景与产品目标，聚焦传统采购模式中供应链分散、采购效率低、价格透明度不足和服务商运营成本高等问题，并将平台目标收束到统一入口、资源整合和高效业务协同上。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/home-design.png", title: "首页设计", alt: "88buys 首页设计展示页", desc: "首页设计页展示移动端商城首屏的信息组织方式，通过轮播 Banner、金刚区入口、快捷入口、热门活动和商品列表建立从运营曝光到交易转化的首页路径，提升采购用户对商品与活动的发现效率。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/product-list.png", title: "商品列表", alt: "88buys 商品列表展示页", desc: "商品列表页展示从频道商品浏览、商品详情到规格弹层的选购流程，通过价格、标签、履约方式、服务保障和规格选择来支持用户完成商品判断，并把浏览行为顺畅推进到加入购物车或立即购买。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/shopping-cart.png", title: "购物车与结算", alt: "88buys 购物车与结算展示页", desc: "购物车与结算页重点呈现下单流程，支持多商品集中管理、价格汇总、地址确认、优惠计算、支付方式选择和提交支付，减少用户逐个下单与重复核算的操作成本。" },
+      { src: "https://cdn.jsdelivr.net/gh/xcc0408/xssdesign-portfolio@main/public/assets-fast/88buys-workbench/operation-design.png", title: "运营设计", alt: "88buys 运营设计展示页", desc: "运营设计页展示专题 Banner、活动弹窗和首页活动位的视觉策略，通过大促、品牌专场、限时特惠和品类主题提升运营曝光效率，使商城具备持续拉新、促活和转化的内容运营能力。" },
     ],
   },
   "xiaolian-crm": {
