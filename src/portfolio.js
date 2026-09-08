@@ -448,6 +448,19 @@ function openImageViewer() {
   imageViewerPanel.focus();
 }
 
+function syncImageViewer() {
+  if (!imageViewer.classList.contains("is-open") || !activeProject) return;
+  const item = activeProject.images[activeIndex];
+  if (!item) return;
+  imageViewerImage.closest(".image-shell")?.classList.remove("is-loaded", "is-error", "is-wide");
+  imageViewerImage.src = item.src;
+  imageViewerImage.alt = item.alt;
+  imageViewerImage.classList.toggle("is-wide", item.layout === "wide" || activeProject.type !== "mobile");
+  imageViewerImage.closest(".image-shell")?.classList.toggle("is-wide", item.layout === "wide" || activeProject.type !== "mobile");
+  imageViewerTitle.textContent = `${activeProject.title} - ${item.title}`;
+  trackImageLoad(imageViewerImage);
+}
+
 function closeImageViewer() {
   if (!imageViewer.classList.contains("is-open")) return;
   imageViewer.classList.remove("is-open");
@@ -456,6 +469,13 @@ function closeImageViewer() {
     document.body.style.overflow = "";
   }
   panel.focus();
+}
+
+function moveProjectPage(direction) {
+  if (!activeProject?.images?.length) return;
+  const nextIndex = (activeIndex + direction + activeProject.images.length) % activeProject.images.length;
+  setImage(nextIndex);
+  syncImageViewer();
 }
 
 function renderThumbs() {
@@ -645,7 +665,17 @@ document.addEventListener("keydown", (event) => {
     closeImageViewer();
     return;
   }
-  if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  if (modal.classList.contains("is-open")) {
+    if (event.key === "Escape") {
+      closeModal();
+      return;
+    }
+    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+      event.preventDefault();
+      moveProjectPage(event.key === "ArrowDown" ? 1 : -1);
+      return;
+    }
+  }
   if (event.key === "Escape" && contactModal?.classList.contains("is-open")) closeContactModal();
 });
 
