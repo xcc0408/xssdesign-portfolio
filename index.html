@@ -2,6 +2,14 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YEZH8NNVLX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YEZH8NNVLX');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0d0d0d" />
@@ -1173,6 +1181,10 @@ if (handDrawingProject) handDrawingProject.cardTitle = ['手绘作品', '钢笔�
  contacts[1].querySelector('span').textContent=s.email; contacts[1].href='mailto:'+s.email;
  contacts[2].querySelector('span').textContent=s.wechat;
  contacts.forEach(el=>el.style.width='auto');
+ const contactTypes=['phone','email','wechat'];
+ contacts.forEach((el,index)=>el.addEventListener('click',()=>{
+   window.gtag?.('event','contact_click',{contact_type:contactTypes[index]});
+ }));
  const collection=document.querySelector('.collection'); collection.replaceChildren();
  collection.setAttribute('aria-label',c.projects.length+' 个项目循环画廊');
  c.projects.forEach((_,i)=>{
@@ -1193,6 +1205,13 @@ if (handDrawingProject) handDrawingProject.cardTitle = ['手绘作品', '钢笔�
  qrPopover.className='brand-qr-popover'; qrPopover.setAttribute('role','tooltip');
  const qrImage=document.createElement('img'); qrImage.src='./public/embedded/xuss-wechat-qr.png'; qrImage.alt='微信二维码';
  qrPopover.append(qrImage,document.createTextNode('微信：'+s.wechat)); brand.append(qrPopover);
+ let qrViewTracked=false;
+ const trackQrView=()=>{
+   if(qrViewTracked)return; qrViewTracked=true;
+   window.gtag?.('event','wechat_qr_view');
+ };
+ brand.addEventListener('mouseenter',trackQrView);
+ brand.addEventListener('focus',trackQrView);
  function fitTitles(){
    const face=document.querySelector('.default-identity');
    for(const [selector,size,limit] of [['.default-identity h1',8.391608,.92],['.about-works',5.594406,.75]]){
@@ -1778,6 +1797,11 @@ if (handDrawingProject) handDrawingProject.cardTitle = ['手绘作品', '钢笔�
 
   function openProject(item) {
     if (mode !== 'idle') return;
+    const analyticsProject = PROJECTS[item.projectIndex];
+    window.gtag?.('event', 'view_project', {
+      project_id: analyticsProject.id,
+      project_name: analyticsProject.title,
+    });
     selected = item;
     prepareModalContent(item.projectIndex);
     stackOffsets = createStackOffsets();
