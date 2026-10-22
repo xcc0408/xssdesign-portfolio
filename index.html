@@ -1222,6 +1222,7 @@ if (handDrawingProject) handDrawingProject.cardTitle = ['手绘作品', '钢笔�
   const modalShowcaseImage = document.querySelector('.modal-showcase-image');
   let modalShowcaseReady = false;
   let modalLoadVersion = 0;
+  let modalDetailObserver = null;
   const shade = document.querySelector('.dialog-shade');
   const closeButton = document.querySelector('.modal-close');
   const projectHeader = document.querySelector('.project-header');
@@ -1677,35 +1678,52 @@ if (handDrawingProject) handDrawingProject.cardTitle = ['手绘作品', '钢笔�
   function prepareModalContent(index) {
     const loadVersion = ++modalLoadVersion;
     const project = PROJECTS[index];
-    modalShowcaseReady = false;
+    if (modalDetailObserver) modalDetailObserver.disconnect();
+    modalShowcaseReady = Boolean(project.details.length);
     modalShowcase.hidden = !project.details.length;
-    const detailImages = project.details.map(detail => {
+    const loadDetailImage = img => {
+      if (!img.dataset.src || img.src) return;
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+      trackImageLoad(img, { lazy: true });
+    };
+    const detailImages = project.details.map((detail, detailIndex) => {
       const img = document.createElement('img');
-      img.className = 'modal-showcase-image'; img.src = detail.src;
+      img.className = 'modal-showcase-image image-skeleton';
+      img.dataset.src = detail.src;
       img.width = detail.width; img.height = detail.height;
       img.alt = detail.alt || project.title + ' 项目展示'; img.decoding = 'async';
-      trackImageLoad(img, { lazy: true });
+      img.loading = 'lazy';
+      img.fetchPriority = detailIndex === 0 ? 'high' : 'low';
+      img.addEventListener('error', () => { img.hidden = true; }, { once: true });
       return img;
     });
     modalShowcase.replaceChildren(...detailImages);
-    if (detailImages.length) Promise.allSettled(detailImages.map(img => img.decode())).then(() => {
-      if (!dialog.open || loadVersion !== modalLoadVersion) return;
-      detailImages.forEach(img => { img.hidden = !img.naturalWidth; });
-      modalShowcaseReady = detailImages.some(img => img.naturalWidth);
-      modalNeedsRender = true; requestRender();
-    });
+    if (detailImages.length) {
+      loadDetailImage(detailImages[0]);
+      modalDetailObserver = new IntersectionObserver(entries => {
+        if (loadVersion !== modalLoadVersion) return;
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          loadDetailImage(entry.target);
+          modalDetailObserver.unobserve(entry.target);
+        });
+      }, { root: modalProject, rootMargin: '120% 0px', threshold: 0.01 });
+      detailImages.slice(1).forEach(img => modalDetailObserver.observe(img));
+    }
     // Show a cached card cover while the selected high-resolution image decodes.
     modalImage.dataset.projectIndex = String(index);
     modalImage.src = project.thumbnail2x;
     trackImageLoad(modalImage);
-    const fullCover = new Image();
-    fullCover.decoding = 'async';
-    fullCover.src = project.image;
-    fullCover.decode().then(() => {
-      if (dialog.open && loadVersion === modalLoadVersion) {
-        modalImage.src = project.image;
-      }
-    }).catch(() => {});
+    setTimeout(() => {
+      if (!dialog.open || loadVersion !== modalLoadVersion) return;
+      const fullCover = new Image();
+      fullCover.decoding = 'async'; fullCover.fetchPriority = 'low';
+      fullCover.src = project.image;
+      fullCover.decode().then(() => {
+        if (dialog.open && loadVersion === modalLoadVersion) modalImage.src = project.image;
+      }).catch(() => {});
+    }, 1500);
     modalImage.alt = project.imageAlt;
     modalNumber.textContent = String(index + 1).padStart(2, '0');
     modalCategory.innerHTML = `<span>${escapeHTML(project.category)}</span><span>${escapeHTML(project.brand)}</span>`;
@@ -1789,6 +1807,10 @@ if (handDrawingProject) handDrawingProject.cardTitle = ['手绘作品', '钢笔�
 
   function finishClosing() {
     modalLoadVersion++;
+    if (modalDetailObserver) {
+      modalDetailObserver.disconnect();
+      modalDetailObserver = null;
+    }
     modalImage.dataset.projectIndex = '';
     modalImage.removeAttribute('src');
     modalShowcaseImage.dataset.projectIndex = '';
